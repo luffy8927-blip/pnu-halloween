@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PNU HALLOWEEN NIGHT 2026 | 부산대학교 학생회</title>
+  <meta name="description" content="2026년 10월 31일, 부산대학교 학생회관 앞 광장. 코스튬 콘테스트, DJ 파티, 포토부스까지. 부산대학교 학생회 할로윈 나이트." />
+  <meta name="theme-color" content="#0a0710" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ff7a18'/%3E%3Ccircle cx='50' cy='55' r='26' fill='%23140a00'/%3E%3Crect x='46' y='18' width='8' height='14' rx='4' fill='%23140a00'/%3E%3C/svg%3E" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PNU HALLOWEEN NIGHT 2026" />
+  <meta property="og:description" content="10.31 SAT 18:00 부산대학교 학생회관 앞 광장. 500명 한정 티켓." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="bg__glow bg__glow--orange"></div>
+    <div class="bg__glow bg__glow--purple"></div>
+    <div class="bg__grid"></div>
+  </div>
+
+  <header class="nav">
+    <a class="brand" href="#hero" data-track="nav_brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c4.5 0 7 3.2 7 7.4 0 2.4-.8 3.9-2 5.1-1 1-1.5 1.8-1.5 3.3v1.2H8.5v-1.2c0-1.5-.5-2.3-1.5-3.3-1.2-1.2-2-2.7-2-5.1C5 6.2 7.5 3 12 3Z"/><path d="M9 15.5V18M15 15.5V18M9.5 9.5h.01M14.5 9.5h.01"/></svg>
+      </span>
+      <span class="brand__text">PNU<em>HALLOWEEN</em></span>
+    </a>
+    <nav class="nav__links" aria-label="주요 메뉴">
+      <a href="#about">이벤트</a>
+      <a href="#lineup">타임라인</a>
+      <a href="#tickets">티켓</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#tickets" class="btn btn--mini btn--primary" data-track="nav_ticket">예매하기</a>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero__badge reveal">
+        <span class="dot"></span> 부산대학교 학생회 주최 · 500명 한정
+      </div>
+      <p class="hero__date reveal">2026. 10. 31 SAT<span>18:00 — 23:00</span></p>
+      <h1 class="hero__title reveal">
+        <span class="hero__title-top">부산대가 가장 어두워지는 밤</span>
+        <span class="hero__title-main">HALLOWEEN<br />NIGHT</span>
+      </h1>
+      <p class="hero__lead reveal">
+        학생회관 앞 광장이 통째로 바뀝니다. 코스튬 콘테스트, DJ 파티,<br class="pc-only" />
+        포토부스, 그리고 밤새 이어지는 스낵바까지.
+      </p>
+      <div class="hero__actions reveal">
+        <a href="#tickets" class="btn btn--primary btn--lg" data-track="hero_cta">
+          티켓 예매하기
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button class="btn btn--ghost btn--lg" id="shareBtn" data-track="share_click" type="button">
+          친구에게 공유
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.6 6.8-4M8.6 13.4l6.8 4"/></svg>
+        </button>
+      </div>
+
+      <div class="countdown reveal" id="countdown" aria-label="이벤트 시작까지 남은 시간">
+        <div class="countdown__cell"><strong id="cd-days">--</strong><span>DAYS</span></div>
+        <div class="countdown__cell"><strong id="cd-hours">--</strong><span>HOURS</span></div>
+        <div class="countdown__cell"><strong id="cd-minutes">--</strong><span>MIN</span></div>
+        <div class="countdown__cell"><strong id="cd-seconds">--</strong><span>SEC</span></div>
+      </div>
+
+      <ul class="hero__facts reveal">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>학생회관 앞 광장</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>2026.10.31 SAT</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a3 3 0 0 0 0 6v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a3 3 0 0 0 0-6Z"/><path d="M13 5v14" stroke-dasharray="2 3"/></svg>스탠다드 5,000원</li>
+      </ul>
+
+      <div class="hero__scroll" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="section" id="about" data-section="about">
+      <div class="section__head">
+        <p class="eyebrow">THE NIGHT</p>
+        <h2>한 번뿐인 밤,<br />제대로 즐기는 4가지</h2>
+        <p class="section__desc">입장 후 원하는 존을 자유롭게 오가며 즐길 수 있어요.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <span class="card__num">01</span>
+          <h3>코스튬 콘테스트</h3>
+          <p>가장 소름 돋는 코스튬에 상금과 부상. 현장 투표로 우승자를 뽑습니다.</p>
+          <span class="card__tag">상금 30만원</span>
+        </article>
+        <article class="card reveal">
+          <span class="card__num">02</span>
+          <h3>DJ 파티</h3>
+          <p>힙합부터 하우스까지, 새벽까지 이어지는 학생회 DJ 라인업.</p>
+          <span class="card__tag">18:00 — 23:00</span>
+        </article>
+        <article class="card reveal">
+          <span class="card__num">03</span>
+          <h3>포토부스</h3>
+          <p>할로윈 한정 프레임과 소품. 인생네컷 무료 촬영 1회 포함.</p>
+          <span class="card__tag">무료</span>
+        </article>
+        <article class="card reveal">
+          <span class="card__num">04</span>
+          <h3>스낵 &amp; 펀치바</h3>
+          <p>핫도그, 팝콘, 그리고 논알콜 할로윈 펀치가 무제한으로 제공됩니다.</p>
+          <span class="card__tag">티켓 포함</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="lineup" id="lineup" data-section="lineup">
+      <div class="section__head section__head--left">
+        <p class="eyebrow">TIMELINE</p>
+        <h2>밤의 흐름</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline__item reveal">
+          <span class="timeline__time">18:00</span>
+          <div class="timeline__body"><h3>게이트 오픈</h3><p>티켓 확인 후 손목밴드 수령. 포토부스는 바로 운영 시작.</p></div>
+        </div>
+        <div class="timeline__item reveal">
+          <span class="timeline__time">19:00</span>
+          <div class="timeline__body"><h3>코스튬 콘테스트</h3><p>참가 신청은 현장 접수. 관객 투표로 최종 순위 결정.</p></div>
+        </div>
+        <div class="timeline__item reveal">
+          <span class="timeline__time">20:30</span>
+          <div class="timeline__body"><h3>DJ 파티</h3><p>메인 스테이지 오픈. 새벽까지 이어지는 댄스 플로어.</p></div>
+        </div>
+        <div class="timeline__item reveal">
+          <span class="timeline__time">22:30</span>
+          <div class="timeline__body"><h3>럭키 드로우</h3><p>현장 참가자 전원 대상. 에어팟, 문화상품권 등 추첨.</p></div>
+        </div>
+        <div class="timeline__item reveal">
+          <span class="timeline__time">23:00</span>
+          <div class="timeline__body"><h3>클로징</h3><p>안전한 귀가를 위해 셔틀 안내를 진행합니다.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tickets" id="tickets" data-section="tickets">
+      <div class="section__head">
+        <p class="eyebrow">TICKETS</p>
+        <h2>티켓 예매</h2>
+        <p class="section__desc">500명 한정, 선착순 마감. 현장 판매는 잔여석에 한해 운영합니다.</p>
+      </div>
+
+      <div class="booking">
+        <div class="booking__tickets">
+          <label class="ticket-option is-active" data-ticket-card="standard">
+            <input type="radio" name="ticket" value="standard" checked />
+            <span class="ticket-option__top">
+              <span class="ticket-option__name">STANDARD</span>
+              <span class="ticket-option__price">5,000<span>원</span></span>
+            </span>
+            <span class="ticket-option__desc">1인 입장 · 스낵바 무제한 · 포토부스 1회</span>
+            <span class="ticket-option__check" aria-hidden="true"></span>
+          </label>
+          <label class="ticket-option" data-ticket-card="couple">
+            <input type="radio" name="ticket" value="couple" />
+            <span class="ticket-option__top">
+              <span class="ticket-option__name">COUPLE</span>
+              <span class="ticket-option__price">9,000<span>원</span></span>
+            </span>
+            <span class="ticket-option__desc">2인 입장 · 스낵바 무제한 · 포토부스 2회</span>
+            <span class="ticket-option__check" aria-hidden="true"></span>
+          </label>
+          <div class="ticket-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+            <p>부산대학교 재학생·휴학생 대상입니다. 입장 시 학생증을 확인합니다.</p>
+          </div>
+        </div>
+
+        <form class="booking__form" id="bookingForm" novalidate>
+          <div class="field-row">
+            <label class="field">
+              <span>이름</span>
+              <input type="text" name="name" id="name" placeholder="홍길동" maxlength="40" required autocomplete="name" />
+            </label>
+            <label class="field">
+              <span>학과</span>
+              <input type="text" name="department" id="department" placeholder="경영학과" maxlength="60" required />
+            </label>
+          </div>
+          <div class="field-row">
+            <label class="field">
+              <span>학번</span>
+              <input type="text" name="studentId" id="studentId" placeholder="20260000" maxlength="20" inputmode="numeric" required />
+            </label>
+            <label class="field">
+              <span>연락처 <em>선택</em></span>
+              <input type="tel" name="phone" id="phone" placeholder="010-0000-0000" maxlength="20" inputmode="tel" autocomplete="tel" />
+            </label>
+          </div>
+          <div class="field-row">
+            <label class="field">
+              <span>수량</span>
+              <select name="quantity" id="quantity">
+                <option value="1">1매</option>
+                <option value="2">2매</option>
+                <option value="3">3매</option>
+                <option value="4">4매</option>
+                <option value="5">5매</option>
+              </select>
+            </label>
+            <div class="field field--total">
+              <span>결제 금액</span>
+              <strong id="totalPrice">5,000원</strong>
+            </div>
+          </div>
+          <label class="agree">
+            <input type="checkbox" id="agree" required />
+            <span>개인정보(이름·학과·학번·연락처) 수집 및 이벤트 운영 목적 이용에 동의합니다.</span>
+          </label>
+          <button type="submit" class="btn btn--primary btn--block btn--lg" data-track="checkout_submit">
+            결제하고 예매 완료하기
+          </button>
+          <p class="form-fine">결제는 데모로 처리되며 실제 금액은 청구되지 않습니다.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="faq" data-section="faq">
+      <div class="section__head">
+        <p class="eyebrow">FAQ</p>
+        <h2>자주 묻는 질문</h2>
+      </div>
+      <div class="faq">
+        <details class="faq__item">
+          <summary data-track="faq_ticket">티켓은 현장에서도 살 수 있나요?</summary>
+          <p>잔여석이 있을 경우에만 현장 판매를 진행합니다. 500명 한정으로 조기 마감될 수 있어 사전 예매를 권장합니다.</p>
+        </details>
+        <details class="faq__item">
+          <summary data-track="faq_refund">환불은 어떻게 하나요?</summary>
+          <p>이벤트 3일 전(10월 28일 23:59)까지 학생회 인스타그램 DM으로 요청 시 전액 환불됩니다.</p>
+        </details>
+        <details class="faq__item">
+          <summary data-track="faq_costume">코스튬을 꼭 입어야 하나요?</summary>
+          <p>아니요. 자유로운 복장으로 참여 가능합니다. 다만 코스튬 콘테스트 참가를 원하시면 19시까지 현장 접수해 주세요.</p>
+        </details>
+        <details class="faq__item">
+          <summary data-track="faq_guest">외부인도 참여할 수 있나요?</summary>
+          <p>부산대학교 재학생·휴학생만 입장 가능합니다. 입장 시 학생증 또는 모바일 학생증을 확인합니다.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <p class="eyebrow">DON'T MISS OUT</p>
+      <h2>10월 31일,<br />후회 없는 밤을 위해</h2>
+      <p>티켓 500장이 모두 팔리면 현장 판매는 없습니다.</p>
+      <a href="#tickets" class="btn btn--primary btn--lg" data-track="final_cta">지금 예매하기</a>
+      <div class="final-cta__links">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" data-track="instagram_click">학생회 인스타그램</a>
+        <a href="https://map.naver.com/" target="_blank" rel="noopener" data-track="map_click">오시는 길</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="brand__text">PNU<em>HALLOWEEN</em></span>
+      <p>부산대학교 총학생회 · 2026 할로윈 나이트 운영위원회</p>
+    </div>
+    <p class="footer__fine">
+      본 페이지는 학생회 이벤트 홍보용 데모이며, 결제는 실제로 처리되지 않습니다.<br />
+      문의: student@pusan.ac.kr
+    </p>
+  </footer>
+
+  <div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" hidden>
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__card">
+      <button class="modal__close" type="button" data-close-modal data-track="checkout_cancel" aria-label="닫기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+      <p class="eyebrow">CHECKOUT</p>
+      <h3 id="checkoutTitle">주문 확인</h3>
+      <dl class="summary" id="checkoutSummary"></dl>
+      <div class="pay-methods" role="radiogroup" aria-label="결제 수단">
+        <label class="pay-method is-active"><input type="radio" name="payMethod" value="kakaopay" checked /><span>카카오페이</span></label>
+        <label class="pay-method"><input type="radio" name="payMethod" value="toss" /><span>토스페이</span></label>
+        <label class="pay-method"><input type="radio" name="payMethod" value="card" /><span>신용·체크카드</span></label>
+      </div>
+      <button class="btn btn--primary btn--block btn--lg" id="payBtn" type="button" data-track="checkout_pay">결제하기</button>
+      <p class="form-fine">결제는 데모로 처리되며 실제 금액은 청구되지 않습니다.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle" hidden>
+    <div class="modal__backdrop"></div>
+    <div class="modal__card modal__card--success">
+      <div class="success-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
+      </div>
+      <p class="eyebrow">SEE YOU THERE</p>
+      <h3 id="successTitle">예매가 완료되었습니다</h3>
+      <p class="success-desc">입장 시 학생증과 예매 번호를 보여주세요.</p>
+      <div class="order-no"><span>예매 번호</span><strong id="orderNo">----</strong></div>
+      <button class="btn btn--primary btn--block" id="closeSuccess" type="button" data-track="success_close">확인</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
