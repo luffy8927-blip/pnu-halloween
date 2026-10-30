@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>PNU HALLOWEEN · Growth Dashboard</title>
+  <meta name="theme-color" content="#0a0710" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%238b5cf6'/%3E%3Cpath d='M22 62h12V40H22zM44 62h12V28H44zM66 62h12V48H66z' fill='%23f7f1ea'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/admin.css" />
+</head>
+<body>
+  <div class="login" id="loginView">
+    <form class="login__card" id="loginForm" autocomplete="on">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        </span>
+        <span class="brand__text">PNU<em>HALLOWEEN</em></span>
+      </div>
+      <p class="eyebrow">ADMIN ONLY</p>
+      <h1>그로스 대시보드</h1>
+      <p class="login__desc">운영진 비밀번호를 입력하면 실시간 퍼널 데이터를 볼 수 있습니다.</p>
+      <label class="field">
+        <span>비밀번호</span>
+        <input type="password" id="password" name="password" placeholder="••••••••••" autocomplete="current-password" required />
+      </label>
+      <p class="login__error" id="loginError" role="alert" hidden></p>
+      <button type="submit" class="btn btn--primary btn--block" id="loginBtn">로그인</button>
+      <p class="login__fine">데이터는 비밀번호로 보호된 Edge Function을 통해 조회됩니다.</p>
+    </form>
+  </div>
+
+  <div class="dash" id="dashView" hidden>
+    <header class="topbar">
+      <div class="topbar__left">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+          </span>
+          <span class="brand__text">PNU<em>GROWTH</em></span>
+        </div>
+        <span class="topbar__divider" aria-hidden="true"></span>
+        <span class="topbar__title">할로윈 나이트 운영 대시보드</span>
+      </div>
+      <div class="topbar__right">
+        <span class="live"><i></i>LIVE</span>
+        <span class="updated" id="updatedAt">불러오는 중…</span>
+        <button class="btn btn--ghost btn--mini" id="refreshBtn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/></svg>
+          새로고침
+        </button>
+        <button class="btn btn--ghost btn--mini" id="logoutBtn" type="button">로그아웃</button>
+      </div>
+    </header>
+
+    <main class="dash__main">
+      <p class="range" id="rangeLabel">최근 14일 · Asia/Seoul</p>
+
+      <section class="kpis" id="kpis" aria-label="핵심 지표"></section>
+
+      <div class="grid grid--2">
+        <section class="panel">
+          <div class="panel__head">
+            <h2>퍼널 전환 · 이탈</h2>
+            <span class="panel__hint">최근 14일 · 세션 기준</span>
+          </div>
+          <div class="funnel" id="funnel"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__head">
+            <h2>시간대별 방문</h2>
+            <span class="panel__hint">오늘 · KST</span>
+          </div>
+          <div class="chart chart--hourly" id="hourlyChart"></div>
+        </section>
+      </div>
+
+      <section class="panel">
+        <div class="panel__head">
+          <h2>일별 트렌드</h2>
+          <div class="legend">
+            <span><i class="legend__dot legend__dot--orange"></i>방문 세션</span>
+            <span><i class="legend__dot legend__dot--green"></i>구매</span>
+          </div>
+        </div>
+        <div class="chart chart--trend" id="trendChart"></div>
+      </section>
+
+      <div class="grid grid--2">
+        <section class="panel">
+          <div class="panel__head">
+            <h2>버튼별 클릭</h2>
+            <span class="panel__hint">최근 14일</span>
+          </div>
+          <div class="table-wrap">
+            <table class="table" id="buttonsTable">
+              <thead><tr><th>버튼</th><th class="num">클릭</th><th class="num">세션</th><th>비중</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__head">
+            <h2>유입 채널 · UTM</h2>
+            <span class="panel__hint">최근 14일</span>
+          </div>
+          <div class="table-wrap">
+            <table class="table" id="utmTable">
+              <thead><tr><th>소스</th><th class="num">방문</th><th class="num">구매</th><th class="num">전환</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="grid grid--3">
+        <section class="panel">
+          <div class="panel__head">
+            <h2>티켓 판매</h2>
+            <span class="panel__hint">최근 14일</span>
+          </div>
+          <div class="table-wrap">
+            <table class="table" id="ticketsTable">
+              <thead><tr><th>티켓</th><th class="num">주문</th><th class="num">매수</th><th class="num">매출</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__head">
+            <h2>디바이스 · 스크롤</h2>
+          </div>
+          <div class="mini-bars" id="deviceStats"></div>
+          <div class="mini-bars mini-bars--scroll" id="scrollStats"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__head">
+            <h2>최근 세션</h2>
+            <span class="panel__hint">최근 12개</span>
+          </div>
+          <div class="sessions" id="recentSessions"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="dash__foot">
+      <span>PNU HALLOWEEN NIGHT 2026 · 운영진 전용</span>
+      <span class="auto-refresh">자동 새로고침 60초</span>
+    </footer>
+  </div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/admin.js"></script>
+</body>
+</html>
